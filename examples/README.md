@@ -18,7 +18,7 @@ This how-to demonstrates usage of "nginxweb" module (https://github.com/Galser/t
     > - that you have SSH key located in files "~/.ssh/id_rsa" and "~/.ssh/id_rsa.pub"
     > - that you want to deploy 3 identical instances (e.g. we not setting on of the module inputs "max_web_servers" )
 
-- We will need to specify those minimal set of the input parameters, for example in file [variables.tf](ariables.tf) :
+- We will need to specify those minimal set of the input parameters, for example in file [variables.tf](variables.tf) :
     ```terraform
     variable "region" {
       default = "eu-central-1"
