@@ -39,7 +39,7 @@ This variable has default value and don't have to be set to use this module. You
 
 # Example usage
 
-For the example usage see the [README.md](examples/README.md) in the examples folder
+For the example usage see the [README.md](examples/README.md) in the examples folder.
 
 # Technologies
 
@@ -48,8 +48,6 @@ For the example usage see the [README.md](examples/README.md) in the examples fo
 
 
 # Todo
-- [ ] create detailed example 
-- [ ] test example code
 - [ ] update readme
 
 
@@ -57,3 +55,5 @@ For the example usage see the [README.md](examples/README.md) in the examples fo
 - [x] initial readme
 - [x] write module code
 - [x] create description for inputs/outputs
+- [x] create detailed example 
+- [x] test example code
