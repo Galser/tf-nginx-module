@@ -2,7 +2,7 @@
 
 This how-to demonstrates usage of "nginxweb" module (https://github.com/Galser/tf-nginx-module)
 
-- Let's define sample main code, in file [main.tf](examples/main.tf) :
+- Let's define sample main code, in file [main.tf](main.tf) :
     ```terraform
     module "nginxweb" {
       source                = "github.com/Galser/tf-nginx-module"
@@ -18,7 +18,7 @@ This how-to demonstrates usage of "nginxweb" module (https://github.com/Galser/t
     > - that you have SSH key located in files "~/.ssh/id_rsa" and "~/.ssh/id_rsa.pub"
     > - that you want to deploy 3 identical instances (e.g. we not setting on of the module inputs "max_web_servers" )
 
-- We will need to specify those minimal set of the input parameters, for exqample in file [variables.tf](examples/variables.tf) :
+- We will need to specify those minimal set of the input parameters, for example in file [variables.tf](ariables.tf) :
     ```terraform
     variable "region" {
       default = "eu-central-1"
@@ -51,14 +51,14 @@ This how-to demonstrates usage of "nginxweb" module (https://github.com/Galser/t
       default = "t2.micro"
     }
     ```
-- Now, we are going to use AWS provider, let's define, file [provider_aws.tf](examples/provider_aws.tf) :
+- Now, we are going to use AWS provider, let's define, file [provider_aws.tf](provider_aws.tf) :
     ```terraform
     provider "aws" {
       profile    = "default"
       region     = "${var.region}"
     }
     ```
-- And the last step - our outputs, if we want to see in a nice way, how to connect to our servers. Define them in [outputs.tf](examples/outputs.tf) :
+- And the last step - our outputs, if we want to see in a nice way, how to connect to our servers. Define them in [outputs.tf](outputs.tf) :
     ```terraform
     output "public_ips" {
       value = "${module.nginxweb.public_ips}"
