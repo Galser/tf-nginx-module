@@ -106,7 +106,7 @@ This how-to demonstrates usage of "nginxweb" module (https://github.com/Galser/t
       "18.194.103.132",
     ]
     ```
-    So, the module had created and provisioned set of 3 servers running basic Nginx web server. Let's check that our servers indeed can server web pages. Checking with [cURL](https://curl.haxx.se/)  one of the IPs from outputs, execute  :  
+    So, the module had created and provisioned set of 3 servers running basic Nginx web server. Let's check that our servers indeed can server web pages. To test with [cURL](https://curl.haxx.se/)  one of the IPs from outputs, execute  :  
     ```
     curl 18.184.53.176
     ```
