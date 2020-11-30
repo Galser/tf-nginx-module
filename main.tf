@@ -33,6 +33,7 @@ resource "aws_instance" "nginxweb" {
   tags = {
     "Name"      = "web ${count.index} / ${var.max_web_servers}",
     "andriitag" = "true",
+    "Cost Centre" = "jamaice-dept-A"
   }
 }
 
