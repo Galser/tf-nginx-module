@@ -7,3 +7,6 @@ output "public_ips" {
 output "public_dns" {
   value = "${aws_instance.nginxweb[*].public_dns}"
 }
+
+output "id" { 
+  value = "${aws_instance.nginxweb[*].id}"
