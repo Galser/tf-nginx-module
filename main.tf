@@ -23,6 +23,7 @@ resource "aws_instance" "nginxweb" {
   }
 
   provisioner "remote-exec" {
+    host     = self.public_ip
     inline = [
       "sudo apt update -y",
       "sudo apt install -y nginx",
