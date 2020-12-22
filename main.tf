@@ -14,6 +14,8 @@ resource "aws_instance" "nginxweb" {
   subnet_id              = "${var.subnet_id}" 
   vpc_security_group_ids = ["${var.vpc_security_group_id}"]
   key_name              = "${aws_key_pair.tf200-nginxweb-key.id}"
+  associate_public_ip_address = true
+
 
   connection {
     user = "ubuntu"
@@ -23,7 +25,6 @@ resource "aws_instance" "nginxweb" {
   }
 
   provisioner "remote-exec" {
-    host     = self.public_ip
     inline = [
       "sudo apt update -y",
       "sudo apt install -y nginx",
