@@ -10,3 +10,4 @@ output "public_dns" {
 
 output "id" { 
   value = "${aws_instance.nginxweb[*].id}"
+}
