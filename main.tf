@@ -17,14 +17,15 @@ resource "aws_instance" "nginxweb" {
   associate_public_ip_address = true
 
 
-  connection {
-    user = "ubuntu"
-    type = "ssh"
-    private_key = "${file("~/.ssh/id_rsa")}"
-    host     = self.public_ip
-  }
 
   provisioner "remote-exec" {
+     connection {
+        user = "ubuntu"
+        type = "ssh"
+        private_key = "${file("~/.ssh/id_rsa")}"
+        host     = self.public_ip
+      }
+
     inline = [
       "sudo apt update -y",
       "sudo apt install -y nginx",
