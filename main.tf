@@ -16,27 +16,23 @@ resource "aws_instance" "nginxweb" {
   key_name              = "${aws_key_pair.tf200-nginxweb-key.id}"
   associate_public_ip_address = true
 
-
-
   provisioner "remote-exec" {
-     connection {
-        user = "ubuntu"
-        type = "ssh"
-        private_key = "${file("~/.ssh/id_rsa")}"
-        host     = self.public_ip
-      }
-
     inline = [
       "sudo apt update -y",
       "sudo apt install -y nginx",
       "sudo ufw allow 'Nginx HTTP'"
     ]
-  }
 
+    connection {
+        user = "ubuntu"
+        type = "ssh"
+        private_key = "${file("~/.ssh/id_rsa")}"
+        host = "${self.public_ip}"
+    }
+  }
   tags = {
     "Name"      = "web ${count.index} / ${var.max_web_servers}",
     "andriitag" = "true",
-    "Cost Centre" = "jamaice-dept-A"
   }
 }
 
